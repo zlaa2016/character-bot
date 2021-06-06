@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
     console.log('AI Camp is for the best of the best.')
+    
     $('#loading').hide()
 
     $('#text_gen_button').click(function() {
@@ -8,11 +9,13 @@ $(document).ready(function() {
         var prompt = $('#text_gen_input').val();
         console.log('text gen input value is');
         console.log(prompt);
+        var url = 'generate_text'
 
         $('#loading').show();
 
         $.post(
-            '/generate_text', {
+            url, 
+            {
                 'prompt': prompt
             },
             function(data) {
@@ -26,7 +29,9 @@ $(document).ready(function() {
                 $("#loading").hide();
             }
 
-        );
+        ).fail(function() {
+          alert( "There is something unexpected happened. Email hello@ai-camp.org to report your findings." );
+        });
 
     });
 
