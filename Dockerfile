@@ -8,5 +8,5 @@ EXPOSE 9000
 COPY ./app /app
 
 RUN apt-get update ##[edited]
-RUN apt-get install ffmpeg libsm6 libxext6  -y
+
 RUN pip install -r requirements.txt
