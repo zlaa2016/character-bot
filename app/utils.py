@@ -1,6 +1,12 @@
 import json
 import os
 
+def get_base_url(port):
+    info = json.load(open(os.path.join(os.environ['HOME'], ".smc", "info.json"), 'r'))
+    project_id = info['project_id']
+    base_url = "/%s/port/%s/" % (project_id, port)
+    return base_url
+
 def allowed_file(filename, ALLOWED_EXTENSIONS=set(['png', 'jpg', 'jpeg'])):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS

@@ -1,7 +1,7 @@
 FROM tiangolo/uwsgi-nginx-flask:python3.8
 
 # the port number need to be incremented as each new project is added
-# edit the two lines below
+# script will edit the two lines below
 ENV LISTEN_PORT opsport
 EXPOSE opsport
 

@@ -1,4 +1,4 @@
-# Run by typing main.py
+# Run by typing python3 main.py
 
 ## **IMPORTANT:** only collaborators on the project where you run
 ## this can access this web server!
@@ -11,37 +11,54 @@
     4. How to speed up the model run? Quantize the model? Using a GPU to run the model? 
 """
 
+# import basics
 import os
 
 # import stuff for our web server
 from flask import Flask, flash, request, redirect, url_for, render_template
 from flask import send_from_directory
 from flask import jsonify
-from utils import allowed_file, and_syntax
+from utils import get_base_url, allowed_file, and_syntax
 
 # import stuff for our models
 import torch
 from aitextgen import aitextgen
 
+'''
+Coding center code - comment out the following 4 lines of code when ready for production
+'''
 # load up the model into memory
 # you will need to have all your trained model into the folder trained_mode.
-ai = aitextgen(to_gpu=False)
+ai = aitextgen(model_folder="/projects/34d0ed99-0189-4257-b043-76e3a84cda74/AlexTesting/trained_model", to_gpu=False)
 
+# setup the webserver
+port = 12345
+base_url = get_base_url(port)
+app = Flask(__name__, static_url_path=base_url+'static')
+
+'''
+Deployment code - uncomment the following 2 lines of code when ready for production
+'''
+ai = aitextgen(to_gpu=False)
 app = Flask(__name__)
 
-@app.route('/')
+#@app.route('/')
+@app.route(base_url)
 def home():
     return render_template('writer_home.html', generated=None)
 
-@app.route('/', methods=['POST'])
+#@app.route('/', methods=['POST'])
+@app.route(base_url, methods=['POST'])
 def home_post():
     return redirect(url_for('results'))
 
-@app.route('/results')
+#@app.route('/results')
+@app.route(base_url + '/results')
 def results():
     return render_template('Write-your-story-with-AI.html', generated=None)
 
-@app.route('/generate_text', methods=["POST"])
+#@app.route('/generate_text', methods=["POST"])
+@app.route(base_url + '/generate_text', methods=["POST"])
 def generate_text():
     """
     view function that will return json response for generated text. 
