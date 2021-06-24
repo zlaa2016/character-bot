@@ -39,8 +39,8 @@ app = Flask(__name__, static_url_path=base_url+'static')
 '''
 Deployment code - uncomment the following 2 lines of code when ready for production
 '''
-ai = aitextgen(to_gpu=False)
-app = Flask(__name__)
+#ai = aitextgen(to_gpu=False)
+#app = Flask(__name__)
 
 #@app.route('/')
 @app.route(base_url)
