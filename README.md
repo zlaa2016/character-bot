@@ -34,10 +34,10 @@ DO NOT TOUCH OTHER FILES.
           - **Write-your-story-with-AI.html**
           - **writer_home.html**
           - simple_index.html
-### main.py ###
-Contains the main flask app itself.
-### main.py ###
-Contains the main flask app itself.
+### pytorch_model.bin ###
+The weights file - must upload if you are running file on coding center.
+### st_app.py ###
+Has code for streamlit.
 ### main.py ###
 Contains the main flask app itself.
 ### requirements.txt ###
