@@ -28,8 +28,8 @@ from aitextgen import aitextgen
 Coding center code - comment out the following 4 lines of code when ready for production
 '''
 # load up the model into memory
-# you will need to have all your trained model into the folder trained_mode.
-ai = aitextgen(model_folder="/projects/34d0ed99-0189-4257-b043-76e3a84cda74/AlexTesting/trained_model", to_gpu=False)
+# you will need to have all your trained model in the app/ directory.
+ai = aitextgen(to_gpu=False)
 
 # setup the webserver
 # port may need to be changed if there are multiple flask servers running on same server
@@ -38,9 +38,8 @@ base_url = get_base_url(port)
 app = Flask(__name__, static_url_path=base_url+'static')
 
 '''
-Deployment code - uncomment the following 2 lines of code when ready for production
+Deployment code - uncomment the following line of code when ready for production
 '''
-#ai = aitextgen(to_gpu=False)
 #app = Flask(__name__)
 
 #@app.route('/')
@@ -87,12 +86,12 @@ if __name__ == "__main__":
     # IMPORTANT: change the cocalcx.ai-camp.org to the site where you are editing this file.
     website_url = 'cocalcx.ai-camp.org'
     print(f"Try to open\n\n    https://{website_url}" + base_url + '\n\n')
-    
+
     app.run(host = '0.0.0.0', port=port, debug=True)
     import sys; sys.exit(0)
 
     '''
-    cv scaffold code
+    scaffold code
     '''
     # Only for debugging while developing
     # app.run(port=80, debug=True)
