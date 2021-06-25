@@ -32,6 +32,7 @@ Coding center code - comment out the following 4 lines of code when ready for pr
 ai = aitextgen(model_folder="/projects/34d0ed99-0189-4257-b043-76e3a84cda74/AlexTesting/trained_model", to_gpu=False)
 
 # setup the webserver
+# port may need to be changed if there are multiple flask servers running on same server
 port = 12345
 base_url = get_base_url(port)
 app = Flask(__name__, static_url_path=base_url+'static')
@@ -80,4 +81,18 @@ def generate_text():
     return jsonify(data)
 
 if __name__ == "__main__":
-    app.run(host = '0.0.0.0', debug=True)
+    '''
+    coding center code
+    '''
+    # IMPORTANT: change the cocalcx.ai-camp.org to the site where you are editing this file.
+    website_url = 'cocalcx.ai-camp.org'
+    print(f"Try to open\n\n    https://{website_url}" + base_url + '\n\n')
+    
+    app.run(host = '0.0.0.0', port=port, debug=True)
+    import sys; sys.exit(0)
+
+    '''
+    cv scaffold code
+    '''
+    # Only for debugging while developing
+    # app.run(port=80, debug=True)
