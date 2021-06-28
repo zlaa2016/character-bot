@@ -11,7 +11,6 @@ def allowed_file(filename, ALLOWED_EXTENSIONS=set(['png', 'jpg', 'jpeg'])):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
     
-    
 #function to add correct and or comma
 def and_syntax(alist):
     if len(alist) == 1:
