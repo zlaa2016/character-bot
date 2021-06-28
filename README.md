@@ -1,4 +1,4 @@
-# nl_writer_scaffold
+# nlp_writer_scaffold
 A scaffold for deploying dockerized flask applications showing student natural language processing projects using aitextgen and pytorch.
 
 ### File Structure
