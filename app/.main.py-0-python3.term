@@ -1,22 +1,0 @@
-Python 3.8.5 (default, Jul 28 2020, 12:59:40) 
-[GCC 9.3.0] on linux
-Type "help", "copyright", "credits" or "license" for more information.
->>> [K>>> Python 3.8.5 (default, Jul 28 2020, 12:59:40) 
-[GCC 9.3.0] on linux
-Type "help", "copyright", "credits" or "license" for more information.
->>> [K>>> python main.py
-  File "<stdin>", line 1
-    python main.py
-           ^
-SyntaxError: invalid syntax
->>> o[Kpython main9[K()
-  File "<stdin>", line 1
-    python main()
-           ^
-SyntaxError: invalid syntax
->>> python main.py
-  File "<stdin>", line 1
-    python main.py
-           ^
-SyntaxError: invalid syntax
->>> 

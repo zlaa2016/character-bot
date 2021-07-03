@@ -81,8 +81,8 @@ def aboutus():
 
 ### spongebot page
 @app.route('/spongebot')
-# @app.route('/spongebot')
-@app.route(base_url + '/spongebot')
+
+# @app.route(base_url + '/spongebot')
 def spongebot():
     return render_template('sb-cp.html', generated=None)
 
