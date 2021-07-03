@@ -8,6 +8,8 @@ DO NOT TOUCH OTHER FILES.
 - .gitignore
 - Dockerfile
 - READMD.md
+- entrypoint.sh
+- nlp
 - app/
      - **main.py**
      - **pytorch_model.bin** <- you will need to upload this yourself after cloning the repo when developing the site
@@ -16,6 +18,7 @@ DO NOT TOUCH OTHER FILES.
      - st_app.py
      - utils.py
      - uwsgi.ini
+     - wsgi.py
      - **weights_location**
      - static/
           - **images/**
@@ -49,4 +52,6 @@ Contains the HTML pages used for the webpage. Edit these to fit your project. wr
 ### Files used for deployment ###
 `Dockerfile`
 `uwsgi.ini`
+`wsgi.py`
+`nlp`
 Do not touch these files.
